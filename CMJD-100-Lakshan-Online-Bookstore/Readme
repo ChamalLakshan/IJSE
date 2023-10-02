@@ -1,0 +1,19 @@
+The project uses Spring boot, JPA and MySQL framework.
+
+### To run this app
+
+ 1. Clone the repository and unzip in your Spring Tool Suite
+ 2. Make sure MySQL is running in your system
+ 3. Next go to this src/main/resources/application.properties file and change your database name, username and password
+ 4. Once completed, run the spring boot app "mvn spring-boot:run"
+ 6. Then go to http://localhost:9000/ you will get the page.
+
+### Prerequisites
+For building and running the application you need:
+- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- [Maven 3](https://maven.apache.org)
+
+
+### Built With
+* [Spring Boot](https://spring.io/projects/spring-boot) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
