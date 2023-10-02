@@ -13,7 +13,7 @@ public interface UserService {
 	boolean register(UserDto ionformation);
 	boolean verify(String token) throws Exception;
 	boolean isUserExist(String email);
-	boolean update(PasswordUpdate information, String token);
+	boolean updateUser(PasswordUpdate information, String token);
 	List<Users> getUsers();
 	Users getSingleUser(String token);
 }

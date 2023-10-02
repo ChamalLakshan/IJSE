@@ -94,7 +94,7 @@ public class UserController {
 	@PutMapping("user/update/{token}")
 	public ResponseEntity<Response> update(@PathVariable("token") String token, @RequestBody PasswordUpdate update) {
 		System.out.println("inside controller  " +token);
-		boolean result = service.update(update, token);
+		boolean result = service.updateUser(update, token);
 		if (result) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED)
 					.body(new Response("password updated successfully", 200));

@@ -18,20 +18,19 @@ import com.example.bookstore.repository.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
-    
+
     @Autowired
     UserRepository userRepository;
 
-    
     @Value("${upload.directory}")
     private String uploadDirectory;
 
-    @Override 
+    @Override
     public Users updateUser(Long userid, UserProfileDTO userProfileDTO) {
         Users existingUser = userRepository.findById(userid).orElse(null);
 
-        if(existingUser != null) {
-            
+        if (existingUser != null) {
+
             MultipartFile file = userProfileDTO.getProfileImage();
             String filename = file.getOriginalFilename();
             String filePath = uploadDirectory + File.separator + filename;
@@ -39,10 +38,10 @@ public class UserServiceImpl implements UserService {
             try {
                 file.transferTo(new File(filePath));
             } catch (IllegalStateException e) {
-                
+
                 e.printStackTrace();
             } catch (IOException e) {
-                
+
                 e.printStackTrace();
             }
 
@@ -83,7 +82,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean update(PasswordUpdate information, String token) {
+    public boolean updateUser(PasswordUpdate information, String token) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
